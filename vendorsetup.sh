@@ -55,7 +55,8 @@ if [ "$1" = "$FDEVICE" -o "$BUILD_DEVICE" = "$FDEVICE" ]; then
     fi
 fi
 
-add_lunch_combo twrp_NX669J-eng
-add_lunch_combo twrp_NX669J-userdebug
+for var in eng userdebug; do
+    add_lunch_combo twrp_NX669J-$var
+done
 add_lunch_combo orangefox_NX669J-eng
 add_lunch_combo orangefox_NX669J-userdebug
