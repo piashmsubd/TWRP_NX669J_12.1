@@ -111,3 +111,7 @@ SOONG_CONFIG_ufsbsg_ufsframework := bsg
 
 # OTA Assert
 TARGET_OTA_ASSERT_DEVICE := NX669J,NX669J-UN,NX669J-EEA,NX669S,NX669S-UN,NX669S-EEA
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.boot.verifiedbootstate=orange \
+    ro.boot.veritymode=disabled \
+    ro.boot.vbmeta.device_state=unlocked
