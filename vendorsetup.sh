@@ -60,3 +60,11 @@ for var in eng userdebug; do
 done
 add_lunch_combo orangefox_NX669J-eng
 add_lunch_combo orangefox_NX669J-userdebug
+if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
+   export | grep "FOX" >> $FOX_BUILD_LOG_FILE
+   export | grep "OF_" >> $FOX_BUILD_LOG_FILE
+   export | grep "TARGET_" >> $FOX_BUILD_LOG_FILE
+   export | grep "TW_" >> $FOX_BUILD_LOG_FILE
+else
+   echo "Log file creation failed or variable is empty."
+fi
