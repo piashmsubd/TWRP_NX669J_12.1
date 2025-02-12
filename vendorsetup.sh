@@ -57,11 +57,7 @@ if [ "$1" = "$FDEVICE" ] || [ "$BUILD_DEVICE" = "$FDEVICE" ]; then
     fi
 fi
 
-# Add lunch combos
-for var in eng userdebug; do
-    add_lunch_combo twrp_NX669J-$var
-    add_lunch_combo orangefox_NX669J-$var
-done
+
 
 # Additional logging for OrangeFox
 if [ -n "$FOX_BUILD_LOG_FILE" ] && [ -f "$FOX_BUILD_LOG_FILE" ]; then
