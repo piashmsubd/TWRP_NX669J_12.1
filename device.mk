@@ -46,6 +46,11 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier \
     update_engine_sideload
+
+PRODUCT_PACKAGES += \
+    adb \
+    fastboot \
+    mkbootimg
     
 # fastbootd
 PRODUCT_PACKAGES += \
