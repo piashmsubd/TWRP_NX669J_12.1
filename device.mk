@@ -47,7 +47,8 @@ PRODUCT_PACKAGES += \
     update_verifier \
     update_engine_sideload
 
-PRODUCT_PACKAGES += \
+# Fastboot & ADB tools moved to host packages
+PRODUCT_HOST_PACKAGES += \
     adb \
     fastboot \
     mkbootimg
