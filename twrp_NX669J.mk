@@ -31,12 +31,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 BUILD_FINGERPRINT := nubia/NX669J/NX669J:11/RKQ1.210614.002/nubia.20230205.222839:user/release-keys
 
-# Include ADB, Fastboot, and related tools
-PRODUCT_PACKAGES += \
-    adb \
-    fastboot \
-    mkbootimg
-
 # Enable USB OTG Support
 TW_INCLUDE_USBHOST := true
 
