@@ -27,8 +27,8 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
-    
-    PRODUCT_PACKAGES += \
+
+PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
 
@@ -52,35 +52,30 @@ PRODUCT_HOST_PACKAGES += \
     adb \
     fastboot \
     mkbootimg
-    
+
 # fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
-    fastbootd  
-    
-#PRODUCT_PROPERTY_OVERRIDES += \
-    #ro.crypto.volume.metadata.method=dm-default-key \
-   # ro.crypto.dm_default_key.options_format.version=1 \
-  #  ro.crypto.volume.options=::v2
-    
+    fastbootd
+
 # Dynamic partitions
-PRODUCT_USE_DYNAMIC_PARTITIONS := true    
-    
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
 # F2FS utilities
 PRODUCT_PACKAGES += \
     sg_write_buffer \
     f2fs_io \
-    check_f2fs    
-  
+    check_f2fs
+
 # HACK: Set vendor patch level
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bootimage.build.date.utc=0 \
     ro.build.date.utc=0
-    
+
 # OEM otacert
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     $(LOCAL_PATH)/security/releasekey
-    
+
 # Take a few libraries from sources
 TARGET_RECOVERY_DEVICE_MODULES += \
     android.hardware.vibrator-V2-ndk_platform.so \
@@ -108,12 +103,12 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so \
-    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/libdisplayconfig.qti.so     
-    
+    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/libdisplayconfig.qti.so
+
 # Namespace definition for librecovery_updater
 SOONG_CONFIG_NAMESPACES += ufsbsg
 SOONG_CONFIG_ufsbsg += ufsframework
-SOONG_CONFIG_ufsbsg_ufsframework := bsg      
+SOONG_CONFIG_ufsbsg_ufsframework := bsg
 
 # OTA Assert
 TARGET_OTA_ASSERT_DEVICE := NX669J,NX669J-UN,NX669J-EEA,NX669S,NX669S-UN,NX669S-EEA
